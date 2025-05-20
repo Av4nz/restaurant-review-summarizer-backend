@@ -3,4 +3,3 @@ uvicorn
 transformers
 torch
 pandas
-scikit-learn
