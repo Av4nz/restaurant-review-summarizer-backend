@@ -6,7 +6,7 @@ model = T5ForConditionalGeneration.from_pretrained("cahya/t5-base-indonesian-sum
 
 # Funsi masih memanggil .csv dan me-return teks string
 # aku masih bingung apakah path hasil scraping disini bakal berganti atau tetap
-# bisa diganti ID di .json yang ada
+# bisa diganti ID di .json yang ingin di summarize
 def summarize_reviews(path):
     df = pd.read_csv(path)
     reviews = df['review'].dropna().tolist()
