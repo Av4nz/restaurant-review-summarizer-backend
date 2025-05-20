@@ -4,3 +4,5 @@ transformers
 torch
 sentencepiece
 pandas
+sastrawi
+nltk
