@@ -1,3 +1,4 @@
+Folder structure:
 ```
 backend/
 ├── app/                          # Main application package
