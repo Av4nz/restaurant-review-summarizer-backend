@@ -6,3 +6,7 @@ sentencepiece
 pandas
 sastrawi
 nltk
+tqdm
+undetected_chromedriver
+selenium
+os
