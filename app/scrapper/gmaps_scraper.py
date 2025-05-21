@@ -1056,6 +1056,31 @@ def main():
             except:
                 print("Failed to close browser properly")
 
+def scrape_gmaps_reviews(
+    place_url: str,
+    num_reviews: int = 100,
+    max_wait: float = 3,
+    max_attempts: int = 30,
+    headless: bool = True,
+    chrome_binary_path: str = None,
+    output_file: str = None
+):
+    scraper = GoogleMapsMaxReviewScraper(
+        headless=headless,
+        chrome_binary_path=chrome_binary_path
+    )
+    try:
+        reviews = scraper.scrape_reviews(
+            place_url=place_url,
+            target_reviews=num_reviews,
+            max_wait_time=max_wait,
+            max_scroll_attempts=max_attempts
+        )
+        if output_file:
+            scraper.save_reviews_to_files(reviews, output_file)
+        return reviews
+    finally:
+        scraper.close()
 
 if __name__ == "__main__":
     main() 
