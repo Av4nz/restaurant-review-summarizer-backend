@@ -2,5 +2,7 @@ fastapi
 uvicorn
 transformers
 torch
+sentencepiece
 pandas
-scikit-learn
+sastrawi
+nltk
