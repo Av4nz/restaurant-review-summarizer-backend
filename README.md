@@ -9,8 +9,6 @@ backend/
 │   │   │   └── scraping.py
 │   ├── core/                     # Konfigurasi (settings, logger, constants)
 │   │   └── config.py
-│   ├── models/                   # Pydantic schemas (request/response model)
-│   │   └── review_model.py
 │   ├── ml/                       # Machine Learning model & utils
 │   │   ├── __init__.py
 │   │   ├── summarizer.py         # Ringkasan review
@@ -18,8 +16,6 @@ backend/
 │   ├── scrapers/                 # Web scraping logic
 │   │   ├── __init__.py
 │   │   └── gmaps_scraper.py
-│   ├── services/                 # Logic pemrosesan (menghubungkan scraping, ML, dll)
-│   │   └── review_service.py
 │   └── main.py                   # Entry point FastAPI
 ├── data/                         # File JSON hasil/penyimpanan lokal
 │   ├── reviews.json
