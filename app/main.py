@@ -16,6 +16,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
 app.include_router(scraping.router, prefix="/api")
 app.include_router(summary.router, prefix="/api")
+app.include_router(food_filter.router, prefix="/api")

@@ -2,7 +2,7 @@ import torch
 import json
 import pandas as pd
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
-from ..core.config import MODEL_PATH, JSON_FILE, PRETRAINED_MODEL, DATA_DIR
+from app.core.config import MODEL_PATH, JSON_FILE, PRETRAINED_MODEL, DATA_DIR
 import os
 
 def preprocess_text(text, tokenizer, max_length=128):

@@ -2,6 +2,6 @@ from fastapi import APIRouter
 
 router = APIRouter()
 
-@router.get("/summary")
+@router.get("/summary-results")
 def reviews_summary():
     return
