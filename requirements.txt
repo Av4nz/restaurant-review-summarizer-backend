@@ -9,3 +9,4 @@ nltk
 tqdm
 undetected_chromedriver
 selenium
+gdown
