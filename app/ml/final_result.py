@@ -1,12 +1,14 @@
 import json
 from collections import Counter
 import re
+import os
 import string
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 import nltk
+from app.core.config import SENTIMENT_JSON_FILE, DATA_DIR
 
 import pandas as pd
 from transformers import T5Tokenizer, T5ForConditionalGeneration
@@ -29,7 +31,7 @@ indo_stopwords = set(stopword_factory.get_stop_words())
 
 
 def summarize_reviews(data):
-    reviews = [item.get('text', '') for item in data if item.get('text')]
+    reviews = [item.get('review_text', '') for item in data if item.get('review_text')]
     text = '. '.join(reviews)
     input_ids = tokenizer.encode(text, return_tensors='pt')
     summary_ids = model.generate(
@@ -79,7 +81,7 @@ def process_reviews_by_sentiment(data):
     sentiment_groups = {'positive': [], 'neutral': [], 'negative': []}
     for item in data:
         sentiment = item.get('sentiment')
-        review = item.get('text')
+        review = item.get('review_text')
         if sentiment in sentiment_groups:
             sentiment_groups[sentiment].append(review)
     return sentiment_groups
@@ -90,9 +92,20 @@ def generate_keyword_json(words, top_n=30):
     most_common = counter.most_common(top_n)
     return [{"keyword": word, "count": count} for word, count in most_common]
 
+def convert_set_to_list(obj):
+    if isinstance(obj, set):
+        return list(obj)
+    elif isinstance(obj, dict):
+        return {k: convert_set_to_list(v) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        return [convert_set_to_list(i) for i in obj]
+    else:
+        return obj
+
 # Main function
 def main_result():
-    data = load_reviews("data/reviews_with_sentiment.json")
+    data = load_reviews(SENTIMENT_JSON_FILE)
+    print(f"Loaded {len(data)} reviews from {SENTIMENT_JSON_FILE}")
     sentiment_groups = process_reviews_by_sentiment(data)
 
     results = {}
@@ -101,11 +114,13 @@ def main_result():
         for review in reviews:
             all_words.extend(preprocess_text(review))
         results[sentiment] = generate_keyword_json(all_words)
+    print("Generated keywords for each sentiment.")
 
     # Generate summaries for each sentiment
     summaries = {}
     for sentiment, reviews in sentiment_groups.items():
-        summaries[sentiment] = summarize_reviews([{"text": r} for r in reviews])
+        summaries[sentiment] = summarize_reviews([{"review_text": r} for r in reviews])
+    print("Generated summaries for each sentiment.")
 
     # Save all keywords and summaries in one JSON file
     output = {
@@ -124,8 +139,13 @@ def main_result():
             "keywords": results.get("negative", [])
         }
     }
-    with open('data/all_sentiments_keywords_summary.json', 'w', encoding='utf-8') as f:
+
+    output = convert_set_to_list(output)
+    output_file = os.path.join(DATA_DIR, "all_sentiments_keywords_summary.json")
+    with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
 
     print("Keyword JSON files generated for each sentiment.")
+
+    return output
 
