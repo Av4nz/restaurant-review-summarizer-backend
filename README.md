@@ -1,3 +1,5 @@
+Download the ML Model for the Sentiment Analysis [here](https://drive.google.com/file/d/16W45YwmyasFFcUE05t-z1v3Y0iJMdjG3/view?usp=sharing)
+
 Folder structure:
 ```
 backend/
