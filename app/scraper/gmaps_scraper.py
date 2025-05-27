@@ -13,6 +13,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, NoSuchElementException, StaleElementReferenceException
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
+from app.core.config import DATA_DIR
 
 
 class GoogleMapsMaxReviewScraper:
@@ -863,11 +864,16 @@ class GoogleMapsMaxReviewScraper:
             print(f"Error extracting review data: {str(e)}")
             return None
     
-    def save_reviews_to_files(self, reviews, output_file="google_maps_reviews.csv"):
+    def save_reviews_to_files(self, reviews, output_dir=DATA_DIR):
         """Save the reviews to CSV and JSON files"""
         if not reviews:
             print("No reviews to save")
             return
+        
+        # Ensure output_dir exists
+        os.makedirs(output_dir, exist_ok=True)
+
+        output_file = os.path.join(output_dir, "google_maps_reviews.json")
         
         # Get all unique keys
         fieldnames = set()
@@ -876,12 +882,12 @@ class GoogleMapsMaxReviewScraper:
         fieldnames = list(fieldnames)
         
         # Save to CSV
-        with open(output_file, 'w', newline='', encoding='utf-8-sig') as csvfile:
-            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-            writer.writeheader()
-            writer.writerows(reviews)
+        # with open(output_file, 'w', newline='', encoding='utf-8-sig') as csvfile:
+        #     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        #     writer.writeheader()
+        #     writer.writerows(reviews)
         
-        print(f"Reviews saved to {output_file}")
+        # print(f"Reviews saved to {output_file}")
         
         # Save to JSON
         json_file = output_file.replace('.csv', '.json')
@@ -1056,6 +1062,31 @@ def main():
             except:
                 print("Failed to close browser properly")
 
+def scrape_gmaps_reviews(
+    place_url: str,
+    num_reviews: int = 10,
+    max_wait: float = 5,
+    max_attempts: int = 30,
+    headless: bool = True,
+    chrome_binary_path: str = None,
+    output_file: str = DATA_DIR
+):
+    scraper = GoogleMapsMaxReviewScraper(
+        headless=headless,
+        chrome_binary_path=chrome_binary_path
+    )
+    try:
+        reviews = scraper.scrape_reviews(
+            place_url=place_url,
+            target_reviews=num_reviews,
+            max_wait_time=max_wait,
+            max_scroll_attempts=max_attempts
+        )
+        if output_file:
+            scraper.save_reviews_to_files(reviews, output_file)
+        return reviews
+    finally:
+        scraper.close()
 
 if __name__ == "__main__":
     main() 

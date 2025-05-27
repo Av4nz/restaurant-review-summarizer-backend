@@ -9,4 +9,4 @@ nltk
 tqdm
 undetected_chromedriver
 selenium
-os
+gdown

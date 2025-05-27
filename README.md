@@ -1,3 +1,5 @@
+Download the ML Model for the Sentiment Analysis [here](https://drive.google.com/file/d/16W45YwmyasFFcUE05t-z1v3Y0iJMdjG3/view?usp=sharing)
+
 Folder structure:
 ```
 backend/
@@ -9,8 +11,6 @@ backend/
 │   │   │   └── scraping.py
 │   ├── core/                     # Konfigurasi (settings, logger, constants)
 │   │   └── config.py
-│   ├── models/                   # Pydantic schemas (request/response model)
-│   │   └── review_model.py
 │   ├── ml/                       # Machine Learning model & utils
 │   │   ├── __init__.py
 │   │   ├── summarizer.py         # Ringkasan review
@@ -18,8 +18,6 @@ backend/
 │   ├── scrapers/                 # Web scraping logic
 │   │   ├── __init__.py
 │   │   └── gmaps_scraper.py
-│   ├── services/                 # Logic pemrosesan (menghubungkan scraping, ML, dll)
-│   │   └── review_service.py
 │   └── main.py                   # Entry point FastAPI
 ├── data/                         # File JSON hasil/penyimpanan lokal
 │   ├── reviews.json

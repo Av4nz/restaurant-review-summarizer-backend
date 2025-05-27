@@ -2,7 +2,7 @@ import torch
 import json
 import pandas as pd
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
-from ..core.config import MODEL_PATH, JSON_FILE, PRETRAINED_MODEL, DATA_DIR
+from app.core.config import MODEL_PATH, JSON_FILE, PRETRAINED_MODEL, DATA_DIR
 import os
 
 def preprocess_text(text, tokenizer, max_length=128):
@@ -93,8 +93,8 @@ def process_reviews_json():
         for i, review_item in enumerate(reviews_data):
             # Extract review text based on the structure
             review_text = None
-            if isinstance(review_item, dict) and 'text' in review_item:
-                review_text = review_item['text']
+            if isinstance(review_item, dict) and 'review_text' in review_item:
+                review_text = review_item['review_text']
             elif isinstance(review_item, dict) and 'review' in review_item:
                 review_text = review_item['review']
             elif isinstance(review_item, str):
@@ -122,8 +122,8 @@ def process_reviews_json():
             # Process the list of reviews
             for i, review_item in enumerate(reviews_data['reviews']):
                 review_text = None
-                if isinstance(review_item, dict) and 'text' in review_item:
-                    review_text = review_item['text']
+                if isinstance(review_item, dict) and 'review_text' in review_item:
+                    review_text = review_item['review_text']
                 elif isinstance(review_item, dict) and 'review' in review_item:
                     review_text = review_item['review']
                 elif isinstance(review_item, str):
