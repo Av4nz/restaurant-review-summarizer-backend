@@ -1,39 +1,31 @@
 {
   "summary": [
-    "positive : Varian mie bisa disajikan dengan tipe manis, gurih, dan pedas dengan menyesuaikan level pedas bahkan bisa sepanas api asmara eaa. Pertahankan kualitas dan kuantitasnya wizziie. Excellent service. Aku suka banget sama service disini. Ramah betul pegawai-pegawainya. Saya makan ada sisa mau dibungkus pun nglayaninnya ramah bingit.. neutral : L L. [ [ ] ] -- an # k k u u s a m m ne ne b b c c o o per per se se ce ce Jl Jl.. / / S S T T M M C C. negative : GA AKAN BALIK KESINI LAGI !!! Tempatnya luas dan bersih tapi masih terasa sumuukkk alias gerah. Alurnya kita antri pesan terlebih dahulu ya gess, nanti kita akan dapat nomor meja.. "
+    "positive : Restauran cepat saji mie dan rice bowl bisa disajikan dengan tipe manis, gurih, dan pedas dengan menyesuaikan level pedas bahkan bisa sepanas api asmara eaa. Varian menu lain bisa ditemukan di sini mulai dari sushi, ice cream gelato, aneka side dish seperti dim sum, somay, ujang kedu (udang keju maksudnya wkwk), dll.. neutral : [ []] -- s.., per peraanan k k t t b b se se so so go go c c finfin. \" ( Jl Jl. / ///K K K. negative : GA AKAN BALIK KESINI LAGI !!!. Tempatnya luas dan bersih tapi masih terasa sumuukkk alias gerah. Alurnya kita antri pesan terlebih dahulu ya gess, nanti kita akan dapat nomor meja. Kemarin aku dapat meja nomor 14, mejanya goyang klo makan serasa kayak kapal kena ombak.. "
   ],
   "positive": {
     "keywords": [
       {
         "keyword": "nya",
-        "count": 11
+        "count": 12
       },
       {
         "keyword": "menu",
-        "count": 10
-      },
-      {
-        "keyword": "banget",
-        "count": 8
+        "count": 9
       },
       {
         "keyword": "mie",
         "count": 7
       },
       {
-        "keyword": "harga",
-        "count": 6
-      },
-      {
-        "keyword": "makan",
-        "count": 6
+        "keyword": "enak",
+        "count": 7
       },
       {
         "keyword": "panas",
         "count": 5
       },
       {
-        "keyword": "nyaman",
+        "keyword": "banget",
         "count": 5
       },
       {
@@ -41,11 +33,15 @@
         "count": 5
       },
       {
-        "keyword": "pilih",
-        "count": 5
+        "keyword": "saji",
+        "count": 4
       },
       {
-        "keyword": "saji",
+        "keyword": "rice",
+        "count": 4
+      },
+      {
+        "keyword": "bowl",
         "count": 4
       },
       {
@@ -65,23 +61,23 @@
         "count": 4
       },
       {
-        "keyword": "enak",
+        "keyword": "harga",
         "count": 4
       },
       {
-        "keyword": "oke",
+        "keyword": "pilih",
         "count": 4
       },
       {
-        "keyword": "rice",
-        "count": 3
-      },
-      {
-        "keyword": "bowl",
-        "count": 3
+        "keyword": "makan",
+        "count": 4
       },
       {
         "keyword": "varian",
+        "count": 3
+      },
+      {
+        "keyword": "tipe",
         "count": 3
       },
       {
@@ -93,11 +89,23 @@
         "count": 3
       },
       {
+        "keyword": "udang",
+        "count": 3
+      },
+      {
+        "keyword": "keju",
+        "count": 3
+      },
+      {
         "keyword": "kopi",
         "count": 3
       },
       {
         "keyword": "kondisi",
+        "count": 3
+      },
+      {
+        "keyword": "nyaman",
         "count": 3
       },
       {
@@ -114,14 +122,6 @@
       },
       {
         "keyword": "motor",
-        "count": 3
-      },
-      {
-        "keyword": "sayang",
-        "count": 3
-      },
-      {
-        "keyword": "udah",
         "count": 3
       }
     ]

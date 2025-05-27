@@ -10,12 +10,21 @@ router = APIRouter()
 @router.get("/summary-results")
 def reviews_summary():
     try:
-        # Pastikan file summary sudah ada, jika belum bisa generate dulu
         if not os.path.exists(SUMMARY_JSON_DIR):
-            main_result()  # generate summary jika file belum ada
+            main_result()
+        
 
         with open(SUMMARY_JSON_DIR, "r", encoding="utf-8") as f:
-            summary_results = json.load(f)
+            try:
+                summary_results = json.load(f)
+            except json.JSONDecodeError as e:
+                raise ValueError(f"Error decoding JSON file: {e}")
+            
+        # try:
+        #     os.remove(SUMMARY_JSON_DIR)
+        #     print(f"{SUMMARY_JSON_DIR} deleted after reading")
+        # except Exception as e:
+        #     print(f"Error deleting {SUMMARY_JSON_DIR}: {e}")
 
         return {
             "status": "success",
