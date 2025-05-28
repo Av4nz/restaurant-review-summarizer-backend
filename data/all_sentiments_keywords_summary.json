@@ -1,7 +1,9 @@
 {
-  "summary": [
-    "positive : Restauran cepat saji mie dan rice bowl bisa disajikan dengan tipe manis, gurih, dan pedas dengan menyesuaikan level pedas bahkan bisa sepanas api asmara eaa. Varian menu lain bisa ditemukan di sini mulai dari sushi, ice cream gelato, aneka side dish seperti dim sum, somay, ujang kedu (udang keju maksudnya wkwk), dll.. neutral : [ []] -- s.., per peraanan k k t t b b se se so so go go c c finfin. \" ( Jl Jl. / ///K K K. negative : GA AKAN BALIK KESINI LAGI !!!. Tempatnya luas dan bersih tapi masih terasa sumuukkk alias gerah. Alurnya kita antri pesan terlebih dahulu ya gess, nanti kita akan dapat nomor meja. Kemarin aku dapat meja nomor 14, mejanya goyang klo makan serasa kayak kapal kena ombak.. "
-  ],
+  "summary": {
+    "positive": "Pertahankan kualitas dan kuantitasnya wizziie. Udah 2x kesini. Pelayanannya full service dan ramah, bikin nyaman dari awal sampai akhir. Untuk makanannya, wajib banget dicoba satu per satu! Menu sushinya beragam dan ada beberapa yang krispi, unik, dan enak banget. Tempat ini cocok banget buat makan bareng teman-teman atau keluarga, apalagi kalau punya selera yang berbeda-beda, karena pilihannya banyak dan variatif.",
+    "neutral": "",
+    "negative": "GA AKAN BALIK KESINI LAGI !!! Tempatnya luas dan bersih tapi masih terasa sumuukkk alias gerah. Alurnya kita antri pesan terlebih dahulu ya gess, nanti kita akan dapat nomor meja."
+  },
   "positive": {
     "keywords": [
       {
@@ -10,26 +12,46 @@
       },
       {
         "keyword": "menu",
-        "count": 9
+        "count": 11
+      },
+      {
+        "keyword": "banget",
+        "count": 11
+      },
+      {
+        "keyword": "makan",
+        "count": 10
+      },
+      {
+        "keyword": "enak",
+        "count": 8
       },
       {
         "keyword": "mie",
         "count": 7
       },
       {
-        "keyword": "enak",
+        "keyword": "ramah",
         "count": 7
+      },
+      {
+        "keyword": "nyaman",
+        "count": 6
+      },
+      {
+        "keyword": "pilih",
+        "count": 6
+      },
+      {
+        "keyword": "layan",
+        "count": 6
       },
       {
         "keyword": "panas",
         "count": 5
       },
       {
-        "keyword": "banget",
-        "count": 5
-      },
-      {
-        "keyword": "ramah",
+        "keyword": "harga",
         "count": 5
       },
       {
@@ -61,15 +83,11 @@
         "count": 4
       },
       {
-        "keyword": "harga",
+        "keyword": "udah",
         "count": 4
       },
       {
-        "keyword": "pilih",
-        "count": 4
-      },
-      {
-        "keyword": "makan",
+        "keyword": "kesini",
         "count": 4
       },
       {
@@ -105,23 +123,7 @@
         "count": 3
       },
       {
-        "keyword": "nyaman",
-        "count": 3
-      },
-      {
         "keyword": "adem",
-        "count": 3
-      },
-      {
-        "keyword": "hujan",
-        "count": 3
-      },
-      {
-        "keyword": "luas",
-        "count": 3
-      },
-      {
-        "keyword": "motor",
         "count": 3
       }
     ]
@@ -132,10 +134,6 @@
   "negative": {
     "keywords": [
       {
-        "keyword": "mie",
-        "count": 15
-      },
-      {
         "keyword": "makan",
         "count": 13
       },
@@ -144,23 +142,11 @@
         "count": 13
       },
       {
-        "keyword": "nya",
-        "count": 10
-      },
-      {
-        "keyword": "meja",
-        "count": 9
+        "keyword": "mie",
+        "count": 11
       },
       {
         "keyword": "kasir",
-        "count": 8
-      },
-      {
-        "keyword": "layan",
-        "count": 8
-      },
-      {
-        "keyword": "enak",
         "count": 8
       },
       {
@@ -168,27 +154,19 @@
         "count": 7
       },
       {
+        "keyword": "layan",
+        "count": 7
+      },
+      {
+        "keyword": "meja",
+        "count": 6
+      },
+      {
         "keyword": "anak",
         "count": 6
       },
       {
-        "keyword": "goyang",
-        "count": 6
-      },
-      {
-        "keyword": "pesan",
-        "count": 5
-      },
-      {
         "keyword": "sen",
-        "count": 5
-      },
-      {
-        "keyword": "rice",
-        "count": 5
-      },
-      {
-        "keyword": "bowl",
         "count": 5
       },
       {
@@ -204,15 +182,7 @@
         "count": 4
       },
       {
-        "keyword": "banget",
-        "count": 4
-      },
-      {
         "keyword": "selesai",
-        "count": 4
-      },
-      {
-        "keyword": "udah",
         "count": 4
       },
       {
@@ -224,11 +194,15 @@
         "count": 4
       },
       {
-        "keyword": "bgt",
-        "count": 3
+        "keyword": "enak",
+        "count": 4
       },
       {
-        "keyword": "duduk",
+        "keyword": "goyang",
+        "count": 4
+      },
+      {
+        "keyword": "bgt",
         "count": 3
       },
       {
@@ -236,7 +210,15 @@
         "count": 3
       },
       {
-        "keyword": "pedes",
+        "keyword": "pesan",
+        "count": 3
+      },
+      {
+        "keyword": "banget",
+        "count": 3
+      },
+      {
+        "keyword": "nya",
         "count": 3
       },
       {
@@ -244,11 +226,31 @@
         "count": 3
       },
       {
+        "keyword": "udah",
+        "count": 3
+      },
+      {
         "keyword": "nunggu",
         "count": 3
       },
       {
-        "keyword": "udang",
+        "keyword": "pindah",
+        "count": 3
+      },
+      {
+        "keyword": "satu",
+        "count": 3
+      },
+      {
+        "keyword": "tutup",
+        "count": 3
+      },
+      {
+        "keyword": "org",
+        "count": 3
+      },
+      {
+        "keyword": "kenyang",
         "count": 3
       }
     ]

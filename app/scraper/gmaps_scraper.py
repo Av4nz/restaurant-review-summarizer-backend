@@ -36,6 +36,9 @@ class GoogleMapsMaxReviewScraper:
             options.add_argument('--window-size=1920,1080')
             options.add_argument('--no-sandbox')
             options.add_argument('--disable-dev-shm-usage')
+            options.add_argument('--lang=id')
+            options.add_argument('--lang=ID')
+            options.add_argument('--accept-lang=id-ID,id')
             
             # Configure chrome binary if provided
             if chrome_binary_path:
@@ -843,6 +846,18 @@ class GoogleMapsMaxReviewScraper:
             # If we found time but not date, use time as the date
             if time_ago and date == "Unknown Date":
                 date = time_ago
+            
+            try:
+                # Cari elemen yang menandakan review diterjemahkan
+                translated_elements = review_element.find_elements(
+                    By.XPATH,
+                    ".//*[contains(text(), 'Translated by Google') or contains(text(), 'Terjemahan oleh Google')]"
+                )
+                if translated_elements:
+                    print("Lewati review hasil terjemahan Google")
+                    return None  # Lewati review terjemahan
+            except Exception as e:
+                pass
                 
             # Fill in the review data, ensuring we have at least some text for the review
             review_data = {

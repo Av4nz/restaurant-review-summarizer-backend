@@ -18,6 +18,7 @@ model = T5ForConditionalGeneration.from_pretrained("cahya/t5-base-indonesian-sum
 
 # Download nltk resources
 nltk.download('punkt')
+nltk.download('punkt_tab')
 nltk.download('stopwords')
 
 # Load Indonesian stopwords
@@ -119,7 +120,10 @@ def main_result():
     # Generate summaries for each sentiment
     summaries = {}
     for sentiment, reviews in sentiment_groups.items():
-        summaries[sentiment] = summarize_reviews([{"review_text": r} for r in reviews])
+        # Only summarize if there are non-empty, non-blank reviews
+        non_blank_reviews = [r for r in reviews if r and r.strip()]
+        if non_blank_reviews:
+            summaries[sentiment] = summarize_reviews([{"review_text": r} for r in non_blank_reviews])
     print("Generated summaries for each sentiment.")
 
     # Save all keywords and summaries in one JSON file
